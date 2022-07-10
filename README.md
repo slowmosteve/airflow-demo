@@ -1,5 +1,8 @@
 # Airflow demo
 
+This repo demonstrates the usage of [Airflow](https://airflow.apache.org/) to run data pipelines. The example DAGs retrieve data from the [Open Library API](https://openlibrary.org/developers/api), write them to a text file and then parse the data before writing to a JSON file. Both examples complete the same tasks but the second example uses the newer TaskFlow API convention from Airflow 2.0.
+
+
 ## Installation
 
 Set up virtual environment
@@ -51,10 +54,6 @@ Open `http://localhost:8080/` in a browser to access the web UI. Note that the i
 
 ## DAG examples
 
-`library_example_1.py` shows the conventional way of authoring DAGs from Airflow 1.0
+`dags/library_example_1.py` shows the conventional way of authoring DAGs from Airflow 1.0
 
-`library_example_2.py` shows the same DAG using the TaskFlow API from Airflow 2.0
-
-
-## TO DO
-- update `library_example_2.py` to recreate the same steps as `library_example_1.py`
+`dags/library_example_2.py` shows the same DAG using the TaskFlow API from Airflow 2.0
