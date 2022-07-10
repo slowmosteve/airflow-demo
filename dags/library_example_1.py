@@ -34,7 +34,7 @@ def load_to_file(**kwargs):
     file.close
      
 def transform_file_data(**kwargs):
-    """Parse file for select fields and write to new file
+    """Parse text file for select fields and write to new JSON file
     """
     input_filename = kwargs['input_file']
     with open(input_filename, 'r') as in_file:
@@ -56,7 +56,7 @@ with DAG(
         'retries': 1,
         'retry_delay': timedelta(minutes=1)
     },
-    description='An example of retrieving data using Python requests library',
+    description='An example DAG defined using legacy Airflow 1.0 conventions (i.e. without TaskFlow API)',
     schedule_interval=timedelta(days=1),
     start_date=datetime.today(),
     catchup=False,
